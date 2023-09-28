@@ -1,8 +1,8 @@
 import "package:easy_trip/components/text_logo.dart";
 import "package:easy_trip/utils/app_asset.dart";
 import "package:easy_trip/utils/styles.dart";
+import 'package:easy_trip/views/onBoarding/on_boarding.view.dart';
 import "package:flutter/material.dart";
-import "package:google_fonts/google_fonts.dart";
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splash-screen";
@@ -13,6 +13,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 2),
+      () => Navigator.of(context).pushNamed(
+        OnBoardingView.routeName,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

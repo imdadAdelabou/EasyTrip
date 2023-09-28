@@ -1,4 +1,5 @@
 import 'package:easy_trip/utils/styles.dart';
+import 'package:easy_trip/views/onBoarding/on_boarding.view.dart';
 import 'package:easy_trip/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         SplashScreen.routeName: (_) => const SplashScreen(),
+        OnBoardingView.routeName: (_) => const OnBoardingView()
       },
     );
   }

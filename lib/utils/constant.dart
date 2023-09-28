@@ -1,23 +1,24 @@
 //Onboarding sample content
 import 'package:easy_trip/models/onboarding/onboarding.model.dart';
+import 'package:easy_trip/utils/app_asset.dart';
 
-List<Onboarding> onBoardingFr = const [
+List<Onboarding> onBoardingFr = [
   Onboarding(
     title: "Explorez des circuits populaires",
     description:
         "Parcourez une sélection de circuit passionnants créés par des voyageurs comme vous",
-    urlImg: "",
+    urlImg: AppAsset.travelOnboardingIll1,
   ),
   Onboarding(
     title: "Interagissez avec d'autres voyageurs ",
     description:
         "Connectez-vous avec des personnes partageant les mêmes intérêts et partagez vos expériences de voyage",
-    urlImg: "",
+    urlImg: AppAsset.travelOnboardingIll2,
   ),
   Onboarding(
-    title: "Partagez Votre Savoir-Faire",
+    title: "Partagez\n Votre Savoir-Faire",
     description:
         "Faites partie de la communauté de voyageurs passionnés. Partagez vos connaissances locales, découvertes cachées et conseils pratiques avec d'autres voyageurs en créant des itinéraires authentiques",
-    urlImg: "",
+    urlImg: AppAsset.travelOnboardingIll3,
   ),
 ];
