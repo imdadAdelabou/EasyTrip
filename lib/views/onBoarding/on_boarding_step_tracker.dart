@@ -9,7 +9,9 @@ class OnBoardingStepTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
       width: 50,
       height: 6.0,
       decoration: BoxDecoration(

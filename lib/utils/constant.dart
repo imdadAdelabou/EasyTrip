@@ -18,7 +18,7 @@ List<Onboarding> onBoardingFr = [
   Onboarding(
     title: "Partagez\n Votre Savoir-Faire",
     description:
-        "Faites partie de la communauté de voyageurs passionnés. Partagez vos connaissances locales, découvertes cachées et conseils pratiques avec d'autres voyageurs en créant des itinéraires authentiques",
+        "Partagez vos connaissances locales, découvertes cachées et conseils pratiques avec d'autres voyageurs en créant des itinéraires authentiques",
     urlImg: AppAsset.travelOnboardingIll3,
   ),
 ];
