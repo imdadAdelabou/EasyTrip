@@ -2,6 +2,8 @@
 import 'package:easy_trip/models/onboarding/onboarding.model.dart';
 import 'package:easy_trip/utils/app_asset.dart';
 
+enum TypeInput { text, password }
+
 List<Onboarding> onBoardingFr = [
   Onboarding(
     title: "Explorez des circuits populaires",

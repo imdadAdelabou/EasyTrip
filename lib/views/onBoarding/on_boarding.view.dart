@@ -143,8 +143,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     );
                     return;
                   }
-                  controller.animateToPage(
-                    currentIndex + 1,
+                  controller.nextPage(
                     duration: const Duration(seconds: 1),
                     curve: Curves.linear,
                   );
