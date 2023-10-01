@@ -4,9 +4,11 @@ import "package:google_fonts/google_fonts.dart";
 
 class TextLogo extends StatelessWidget {
   final double size;
+  final Color secondColor;
   const TextLogo({
     super.key,
     this.size = 30,
+    this.secondColor = Colors.white,
   });
 
   @override
@@ -26,7 +28,7 @@ class TextLogo extends StatelessWidget {
           "Trip",
           style: GoogleFonts.lato(
             fontWeight: FontWeight.w700,
-            color: AppColor.whiteColor,
+            color: secondColor,
             fontSize: size,
           ),
         ),

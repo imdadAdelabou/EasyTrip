@@ -2,6 +2,7 @@ import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
+import "package:easy_trip/views/auth/login.dart";
 import "package:easy_trip/views/onBoarding/on_boarding_step_tracker.dart";
 import "package:flutter/material.dart";
 import "package:flutter_svg/svg.dart";
@@ -44,7 +45,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   right: 16.0,
                 ),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed(LoginView.routeName);
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -65,49 +68,50 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               ),
             ),
             Expanded(
-                child: PageView(
-              onPageChanged: (int? index) {
-                setState(() {
-                  currentIndex = index!;
-                });
-              },
-              controller: controller,
-              children: [
-                ...onBoardingFr.map(
-                  (e) => Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        e.urlImg,
-                        height: maxHeight * .5,
-                      ),
-                      SizedBox(
-                        width: maxWidth * .8,
-                        child: Text(
-                          e.title,
-                          style: GoogleFonts.lato(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 22.0,
-                          ),
-                          textAlign: TextAlign.center,
+              child: PageView(
+                onPageChanged: (int? index) {
+                  setState(() {
+                    currentIndex = index!;
+                  });
+                },
+                controller: controller,
+                children: [
+                  ...onBoardingFr.map(
+                    (e) => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          e.urlImg,
+                          height: maxHeight * .5,
                         ),
-                      ),
-                      const Gap(10.0),
-                      SizedBox(
-                        width: maxWidth * .9,
-                        child: Text(
-                          e.description,
-                          style: GoogleFonts.lato(
-                            color: AppColor.greyColor,
+                        SizedBox(
+                          width: maxWidth * .8,
+                          child: Text(
+                            e.title,
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22.0,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            )),
+                        const Gap(10.0),
+                        SizedBox(
+                          width: maxWidth * .9,
+                          child: Text(
+                            e.description,
+                            style: GoogleFonts.lato(
+                              color: AppColor.greyColor,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -132,7 +136,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 content: currentIndex >= 0 && currentIndex <= 1
                     ? AppMessage.nextLabel
                     : AppMessage.beginLabel,
-                action: () {},
+                action: () {
+                  if (currentIndex == 2) {
+                    Navigator.of(context).pushNamed(
+                      LoginView.routeName,
+                    );
+                    return;
+                  }
+                  controller.animateToPage(
+                    currentIndex + 1,
+                    duration: const Duration(seconds: 1),
+                    curve: Curves.linear,
+                  );
+                },
               ),
             ),
             const Gap(30.0),

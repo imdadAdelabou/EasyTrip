@@ -22,3 +22,4 @@ List<Onboarding> onBoardingFr = [
     urlImg: AppAsset.travelOnboardingIll3,
   ),
 ];
+const horizontalSpaceBtwScreenAndComponent = 20.0;
