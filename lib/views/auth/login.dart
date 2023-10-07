@@ -5,6 +5,7 @@ import "package:easy_trip/components/text_logo.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
+import "package:easy_trip/views/auth/register/select_role.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:google_fonts/google_fonts.dart";
@@ -71,7 +72,9 @@ class LoginView extends StatelessWidget {
               Center(
                 child: CustomTextbtn(
                   label: AppMessage.iamNewLabel,
-                  action: () {},
+                  action: () => Navigator.of(context).pushNamed(
+                    SelectRole.routeName,
+                  ),
                   textDecoration: TextDecoration.underline,
                 ),
               ),

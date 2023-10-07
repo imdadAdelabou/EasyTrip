@@ -1,9 +1,28 @@
 //Onboarding sample content
 import 'package:easy_trip/models/onboarding/onboarding.model.dart';
+import 'package:easy_trip/models/user/role/user_role_choice.dart';
 import 'package:easy_trip/utils/app_asset.dart';
+import 'package:easy_trip/utils/app_message.dart';
+import 'package:easy_trip/utils/styles.dart';
 
 enum TypeInput { text, password }
 
+enum TypeUser { traveller, creator }
+
+List<UserRoleChoice> userChoices = [
+  UserRoleChoice(
+    title: AppMessage.travellerLabel,
+    description: "",
+    urlImage: "",
+    color: AppColor.blueOceanColor,
+  ),
+  UserRoleChoice(
+    title: AppMessage.guideLabel,
+    description: "",
+    urlImage: "",
+    color: AppColor.orangeVariant,
+  ),
+];
 List<Onboarding> onBoardingFr = [
   Onboarding(
     title: "Explorez des circuits populaires",
