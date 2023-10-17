@@ -1,4 +1,3 @@
-import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/components/input_with_label.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";

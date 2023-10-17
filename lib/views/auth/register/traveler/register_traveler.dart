@@ -1,7 +1,4 @@
-import "package:easy_trip/components/custom_btn.dart";
-import "package:easy_trip/components/input_with_label.dart";
 import "package:easy_trip/utils/app_message.dart";
-import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/auth/register/traveler/stepper_register.dart";
 import "package:flutter/material.dart";

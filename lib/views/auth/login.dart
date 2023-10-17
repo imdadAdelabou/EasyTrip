@@ -1,6 +1,5 @@
 import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/components/custom_textbtn.dart";
-import "package:easy_trip/components/custom_textfield.dart";
 import "package:easy_trip/components/input_with_label.dart";
 import "package:easy_trip/components/text_logo.dart";
 import "package:easy_trip/utils/app_message.dart";
@@ -9,7 +8,6 @@ import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/auth/register/select_role.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
-import "package:google_fonts/google_fonts.dart";
 
 class LoginView extends StatelessWidget {
   static String routeName = "/login";

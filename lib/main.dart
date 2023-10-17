@@ -2,6 +2,7 @@ import 'package:easy_trip/utils/styles.dart';
 import 'package:easy_trip/views/auth/login.dart';
 import 'package:easy_trip/views/auth/register/select_role.dart';
 import 'package:easy_trip/views/auth/register/traveler/register_traveler.dart';
+import 'package:easy_trip/views/auth/verify_phone_number.dart';
 import 'package:easy_trip/views/onBoarding/on_boarding.view.dart';
 import 'package:easy_trip/views/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         LoginView.routeName: (_) => const LoginView(),
         SelectRole.routeName: (_) => const SelectRole(),
         RegisterTravel.routeName: (_) => const RegisterTravel(),
+        VerifyPhoneNumber.routeName: (_) => const VerifyPhoneNumber(),
       },
     );
   }

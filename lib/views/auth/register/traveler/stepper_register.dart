@@ -2,6 +2,7 @@ import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/views/auth/register/traveler/first_form.dart";
 import "package:easy_trip/views/auth/register/traveler/second_form.dart";
+import "package:easy_trip/views/auth/verify_phone_number.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -42,7 +43,11 @@ class _StepperRegisterState extends State<StepperRegister> {
               setState(() {
                 _currentIndex++;
               });
+              return;
             }
+            Navigator.of(context).pushNamed(
+              VerifyPhoneNumber.routeName,
+            );
           },
         ),
       ),

@@ -19,4 +19,9 @@ class AppMessage {
   static String moreOnYou = "Dites nous en plus sur vous";
   static String setPassword = "Configurer votre mot de passe";
   static String continueLabel = "Continue";
+  static String verifyPhoneNumberLabel = "Vérifier votre numéro \nde téléphone";
+  static String detailCodeSend =
+      "Un code de vérification de 05 chiffres vient d'être envoyer sur votre numéro de téléphone. Veuillez le renseigner dans ces champs.";
+  static String verifyLabel = "Vérifier";
+  static String codeNoRecieve = "Nouveau code";
 }

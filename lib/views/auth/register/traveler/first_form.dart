@@ -1,7 +1,6 @@
 import "package:easy_trip/components/input_with_label.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
-import "package:easy_trip/utils/styles.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 
