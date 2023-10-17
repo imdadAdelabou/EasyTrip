@@ -1,15 +1,22 @@
 import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
-import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/auth/register/role_card.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:google_fonts/google_fonts.dart";
 
-class SelectRole extends StatelessWidget {
+class SelectRole extends StatefulWidget {
   static String routeName = "/select-role";
   const SelectRole({super.key});
+
+  @override
+  State<SelectRole> createState() => _SelectRoleState();
+}
+
+class _SelectRoleState extends State<SelectRole> {
+  TypeUser? typeUserSelected;
+  String? currentPath;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +43,18 @@ class SelectRole extends StatelessWidget {
                     (e) => Padding(
                       padding: const EdgeInsets.only(bottom: 20.0),
                       child: RoleCard(
+                        id: userChoices.indexOf(e),
+                        title: e.title,
                         color: e.color,
+                        urlIll: e.urlImage,
+                        description: e.description,
+                        isSelected: typeUserSelected == e.userType,
+                        onTap: () {
+                          setState(() {
+                            typeUserSelected = e.userType;
+                            currentPath = e.nextPath;
+                          });
+                        },
                       ),
                     ),
                   )
@@ -44,7 +62,11 @@ class SelectRole extends StatelessWidget {
               const Gap(20.0),
               CustomBtn(
                 content: AppMessage.nextLabel,
-                action: () {},
+                action: currentPath != null && currentPath!.isNotEmpty
+                    ? () => Navigator.of(context).pushNamed(
+                          currentPath!,
+                        )
+                    : null,
               ),
             ],
           ),

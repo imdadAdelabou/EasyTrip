@@ -3,13 +3,13 @@ import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class CustomBtn extends StatelessWidget {
-  final Function() action;
+  final Function()? action;
   final String content;
   final bool isLoading;
   const CustomBtn({
     super.key,
     required this.content,
-    required this.action,
+    this.action,
     this.isLoading = false,
   });
 

@@ -4,6 +4,7 @@ import 'package:easy_trip/models/user/role/user_role_choice.dart';
 import 'package:easy_trip/utils/app_asset.dart';
 import 'package:easy_trip/utils/app_message.dart';
 import 'package:easy_trip/utils/styles.dart';
+import 'package:easy_trip/views/auth/register/traveler/register_traveler.dart';
 
 enum TypeInput { text, password }
 
@@ -12,15 +13,21 @@ enum TypeUser { traveller, creator }
 List<UserRoleChoice> userChoices = [
   UserRoleChoice(
     title: AppMessage.travellerLabel,
-    description: "",
-    urlImage: "",
+    description:
+        "Laissez-vous guider par les créateurs du monde entier et découvrez des trésors cachés à chaque coin de la planète.",
+    urlImage: AppAsset.travelChoiceIll,
     color: AppColor.blueOceanColor,
+    userType: TypeUser.traveller,
+    nextPath: RegisterTravel.routeName,
   ),
   UserRoleChoice(
     title: AppMessage.guideLabel,
-    description: "",
-    urlImage: "",
+    description:
+        "Faites partie de la communauté des Créateurs qui font du monde une destination encore plus captivante.",
+    urlImage: AppAsset.creatorChoiceIll,
     color: AppColor.orangeVariant,
+    userType: TypeUser.creator,
+    nextPath: "",
   ),
 ];
 List<Onboarding> onBoardingFr = [

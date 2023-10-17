@@ -1,6 +1,7 @@
 import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/components/custom_textbtn.dart";
 import "package:easy_trip/components/custom_textfield.dart";
+import "package:easy_trip/components/input_with_label.dart";
 import "package:easy_trip/components/text_logo.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
@@ -30,30 +31,17 @@ class LoginView extends StatelessWidget {
                 secondColor: AppColor.blueOceanColor,
               ),
               const Gap(50.0),
-              Text(
-                AppMessage.phoneNumber,
-                style: GoogleFonts.lato(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const Gap(4.0),
-              const CustomTextField(
+              InputWithLabel(
+                label: AppMessage.phoneNumber,
                 hintText: '3377098300',
-                keyboardType: TextInputType.number,
+                keyBoardType: TextInputType.number,
               ),
               const Gap(20.0),
-              Text(
-                AppMessage.password,
-                style: GoogleFonts.lato(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const Gap(4.0),
-              const CustomTextField(
+              InputWithLabel(
+                label: AppMessage.password,
                 hintText: 'example962A666',
-                keyboardType: TextInputType.text,
                 typeInput: TypeInput.password,
-                obscureText: false,
+                keyBoardType: TextInputType.text,
               ),
               Align(
                 alignment: Alignment.bottomRight,
