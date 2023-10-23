@@ -16,7 +16,6 @@ class CreatorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double maxWidth = MediaQuery.of(context).size.width;
-    double maxHeight = MediaQuery.of(context).size.height;
 
     return SizedBox(
       width: maxWidth * .7,
@@ -80,7 +79,7 @@ class CreatorCard extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                        AppColor.orangeVariant,
+                        AppColor.orangeColor,
                       ),
                     ),
                     child: Row(
