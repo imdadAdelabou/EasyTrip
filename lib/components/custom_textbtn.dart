@@ -1,3 +1,4 @@
+import "package:easy_trip/utils/styles.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -31,7 +32,12 @@ class CustomTextbtn extends StatelessWidget {
         ),
       ),
       onPressed: action,
-      child: Text(label),
+      child: Text(
+        label,
+        style: GoogleFonts.lato(
+          color: AppColor.blueOceanColor,
+        ),
+      ),
     );
   }
 }

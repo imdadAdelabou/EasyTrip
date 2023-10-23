@@ -5,4 +5,8 @@ class AppAsset {
   static String travelOnboardingIll3 = "assets/gifs/travelersOnBoarding3.svg";
   static String travelChoiceIll = "assets/gifs/travelRoleChoice.svg";
   static String creatorChoiceIll = "assets/gifs/creatorChoiceIll.svg";
+  static String sampleCoverImg = "assets/gifs/sampleCoverImage.jpeg";
+  static String iconNotif = "assets/icons/iconNotif.svg";
+  static String coverSampleProfile = "assets/gifs/coverSamplePicture.webp";
+  static String sampleProfilePicture = "assets/gifs/samplePictureProfile.jpeg";
 }

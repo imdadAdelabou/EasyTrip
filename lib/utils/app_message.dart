@@ -31,4 +31,8 @@ class AppMessage {
   static String ourCircuits = "Nos circuits";
   static String seeMoreLabel = "Voir plus";
   static String ourCreatorLabel = "Nos créateurs";
+  static String sampleDescription =
+      "Profitez de ce circuit afin de découvrir des coins cachés du Bénin.";
+  static String freeLabel = "Gratuit";
+  static String seeProfile = "Voir le profil";
 }

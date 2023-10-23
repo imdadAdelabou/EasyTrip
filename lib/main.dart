@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColor.blueOceanColor),
         useMaterial3: true,
+        cardColor: AppColor.whiteVariant,
       ),
       initialRoute: SplashScreen.routeName,
       debugShowCheckedModeBanner: false,

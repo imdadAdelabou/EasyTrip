@@ -12,4 +12,5 @@ class AppColor {
   static Color greyColor = const Color(0xff757575);
   //For User profile and other
   static Color pinkFade = const Color(0xffff4081);
+  static Color whiteVariant = const Color(0xffF3F3F3);
 }
