@@ -24,4 +24,11 @@ class AppMessage {
       "Un code de vérification de 05 chiffres vient d'être envoyer sur votre numéro de téléphone. Veuillez le renseigner dans ces champs.";
   static String verifyLabel = "Vérifier";
   static String codeNoRecieve = "Nouveau code";
+  static String descriptionUploadProfile =
+      "Faites vous remarquer ! Ajouter une photo de vous.";
+  static String finishLabel = "Terminer";
+  static String helloLabel = "Salut";
+  static String ourCircuits = "Nos circuits";
+  static String seeMoreLabel = "Voir plus";
+  static String ourCreatorLabel = "Nos créateurs";
 }

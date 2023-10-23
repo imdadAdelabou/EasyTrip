@@ -1,3 +1,4 @@
+import "package:easy_trip/components/back_icon.dart";
 import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
@@ -30,6 +31,12 @@ class _SelectRoleState extends State<SelectRole> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Gap(20.0),
+              BackIcon(
+                action: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              const Gap(8.0),
               Text(
                 AppMessage.chooseYourRoleLabel,
                 style: GoogleFonts.lato(
@@ -37,7 +44,7 @@ class _SelectRoleState extends State<SelectRole> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Gap(30.0),
+              const Gap(20.0),
               ...userChoices
                   .map<Widget>(
                     (e) => Padding(
@@ -59,7 +66,7 @@ class _SelectRoleState extends State<SelectRole> {
                     ),
                   )
                   .toList(),
-              const Gap(20.0),
+              const Gap(10.0),
               CustomBtn(
                 content: AppMessage.nextLabel,
                 action: currentPath != null && currentPath!.isNotEmpty

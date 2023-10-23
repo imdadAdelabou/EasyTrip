@@ -1,3 +1,4 @@
+import "package:easy_trip/components/back_icon.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/auth/register/traveler/stepper_register.dart";
@@ -18,6 +19,12 @@ class RegisterTravel extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Gap(20.0),
+              BackIcon(
+                action: () {
+                  Navigator.of(context).pop();
+                },
+              ),
               const Gap(20.0),
               Text(
                 AppMessage.inscription,

@@ -1,4 +1,5 @@
 import "package:easy_trip/components/custom_btn.dart";
+import "package:easy_trip/components/skip_label.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
@@ -6,7 +7,6 @@ import "package:easy_trip/views/auth/login.dart";
 import "package:easy_trip/views/onBoarding/on_boarding_step_tracker.dart";
 import "package:flutter/material.dart";
 import "package:flutter_svg/svg.dart";
-import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:gap/gap.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -39,32 +39,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           children: [
             Align(
               alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 4.0,
-                  right: 16.0,
-                ),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).pushNamed(LoginView.routeName);
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        AppMessage.skipLabel,
-                        style: GoogleFonts.lato(
-                          color: AppColor.greyColor,
-                        ),
-                      ),
-                      Icon(
-                        FontAwesomeIcons.chevronRight,
-                        size: 15,
-                        color: AppColor.greyColor,
-                      )
-                    ],
-                  ),
-                ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(LoginView.routeName);
+                },
+                child: const SkipLabel(),
               ),
             ),
             Expanded(

@@ -6,6 +6,8 @@ import 'package:easy_trip/utils/app_message.dart';
 import 'package:easy_trip/utils/styles.dart';
 import 'package:easy_trip/views/auth/register/traveler/register_traveler.dart';
 
+const circleRadius = 70.0;
+
 enum TypeInput { text, password }
 
 enum TypeUser { traveller, creator }

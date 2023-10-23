@@ -1,3 +1,4 @@
+import "package:easy_trip/components/back_icon.dart";
 import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/components/custom_textbtn.dart";
 import "package:easy_trip/components/input_with_label.dart";
@@ -25,6 +26,11 @@ class LoginView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Gap(20.0),
+              BackIcon(
+                action: () {
+                  Navigator.of(context).pop();
+                },
+              ),
               TextLogo(
                 secondColor: AppColor.blueOceanColor,
               ),
