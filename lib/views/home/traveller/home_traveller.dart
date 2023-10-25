@@ -77,7 +77,10 @@ class HomeTraveller extends StatelessWidget {
                 child: CircuitCard(
                   circuit: Circuit(
                     title: "French Riveira",
-                    covers: [AppAsset.sampleCoverImg],
+                    covers: [
+                      AppAsset.sampleCoverImg,
+                      AppAsset.coverSampleProfile,
+                    ],
                     description: AppMessage.sampleDescription,
                     price: 0,
                   ),

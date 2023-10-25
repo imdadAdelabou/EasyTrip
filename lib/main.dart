@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         cardColor: AppColor.whiteVariant,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColor.whiteColor,
+        ),
       ),
       initialRoute: SplashScreen.routeName,
       debugShowCheckedModeBanner: false,
