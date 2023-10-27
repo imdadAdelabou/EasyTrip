@@ -35,4 +35,6 @@ class AppMessage {
       "Profitez de ce circuit afin de découvrir des coins cachés du Bénin.";
   static String freeLabel = "Gratuit";
   static String seeProfile = "Voir le profil";
+  static String descriptionLabel = "Description";
+  static String arretLabel = "Arrêt";
 }

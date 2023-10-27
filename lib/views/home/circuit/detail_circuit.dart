@@ -1,8 +1,13 @@
 import "package:easy_trip/models/circuit/circuit.dart";
+import "package:easy_trip/utils/app_message.dart";
+import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/home/circuit/cover_img_indicator.dart";
+import "package:easy_trip/views/home/circuit/piece_detail_circuit.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
+import "package:gap/gap.dart";
+import "package:google_fonts/google_fonts.dart";
 
 class DetailCircuit extends StatefulWidget {
   final Circuit circuit;
@@ -64,6 +69,47 @@ class _DetailCircuitState extends State<DetailCircuit> {
                 ),
               ),
               automaticallyImplyLeading: false,
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  // Build your column items here.
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: horizontalSpaceBtwScreenAndComponent,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Gap(30.0),
+                        PieceDetailCircuit(
+                          label: AppMessage.descriptionLabel,
+                          content: widget.circuit.description,
+                          icon: FontAwesomeIcons.circleInfo,
+                        ),
+                        const Gap(10.0),
+                        ...widget.circuit.paths
+                            .map<Widget>(
+                              (e) => Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "${AppMessage.arretLabel} #${widget.circuit.paths.indexOf(e) + 1}",
+                                    style: GoogleFonts.lato(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                            .toList()
+                      ],
+                    ),
+                  );
+                },
+                childCount: 1,
+              ),
             ),
           ],
         ),
