@@ -37,4 +37,7 @@ class AppMessage {
   static String seeProfile = "Voir le profil";
   static String descriptionLabel = "Description";
   static String arretLabel = "Arrêt";
+  static String byLabel = "Par ";
+  static String seeMoreCircuit =
+      "Découvrez d'autres circuits de ce \ncréateur :";
 }

@@ -1,3 +1,4 @@
+import "package:easy_trip/components/circle_picture_creator_card.dart";
 import "package:easy_trip/models/creator/creator.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/styles.dart";
@@ -41,13 +42,8 @@ class CreatorCard extends StatelessWidget {
                 Positioned(
                   bottom: -20,
                   left: 10,
-                  child: CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
-                      radius: 24,
-                      backgroundImage: AssetImage(creator.pictureProfile),
-                    ),
+                  child: CirclePictureCreatorCard(
+                    profile: creator.pictureProfile,
                   ),
                 ),
               ],

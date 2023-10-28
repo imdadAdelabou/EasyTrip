@@ -1,8 +1,11 @@
+import "package:easy_trip/components/circle_picture_creator_card.dart";
 import "package:easy_trip/models/circuit/circuit.dart";
+import "package:easy_trip/utils/app_asset.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/home/circuit/cover_img_indicator.dart";
+import "package:easy_trip/views/home/circuit/more_circuit_by_author.dart";
 import "package:easy_trip/views/home/circuit/piece_detail_circuit.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
@@ -44,8 +47,6 @@ class _DetailCircuitState extends State<DetailCircuit> {
 
   @override
   Widget build(BuildContext context) {
-    double maxHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
@@ -74,38 +75,112 @@ class _DetailCircuitState extends State<DetailCircuit> {
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                   // Build your column items here.
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: horizontalSpaceBtwScreenAndComponent,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Gap(30.0),
-                        PieceDetailCircuit(
-                          label: AppMessage.descriptionLabel,
-                          content: widget.circuit.description,
-                          icon: FontAwesomeIcons.circleInfo,
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Gap(30.0),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: horizontalSpaceBtwScreenAndComponent,
                         ),
-                        const Gap(10.0),
-                        ...widget.circuit.paths
-                            .map<Widget>(
-                              (e) => Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    "${AppMessage.arretLabel} #${widget.circuit.paths.indexOf(e) + 1}",
-                                    style: GoogleFonts.lato(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14.0,
-                                    ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            PieceDetailCircuit(
+                              label: AppMessage.descriptionLabel,
+                              content: widget.circuit.description,
+                              icon: FontAwesomeIcons.circleInfo,
+                            ),
+                            const Gap(10.0),
+                            ...widget.circuit.paths
+                                .map<Widget>(
+                                  (e) => Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        "${AppMessage.arretLabel} #${widget.circuit.paths.indexOf(e) + 1}",
+                                        style: GoogleFonts.lato(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 14.0,
+                                        ),
+                                      ),
+                                      const Gap(10.0),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 8.0,
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            PieceDetailCircuit(
+                                              iconBehindContent:
+                                                  FontAwesomeIcons.circleInfo,
+                                              content: e.title,
+                                            ),
+                                            PieceDetailCircuit(
+                                              iconBehindContent:
+                                                  FontAwesomeIcons.mapPin,
+                                              content: e.position,
+                                            ),
+                                            PieceDetailCircuit(
+                                              iconBehindContent:
+                                                  FontAwesomeIcons.commentDots,
+                                              content: e.description,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const Gap(10.0),
+                                    ],
                                   ),
-                                ],
+                                )
+                                .toList(),
+                            const Gap(20.0),
+                            Row(
+                              children: [
+                                Text(
+                                  AppMessage.byLabel,
+                                  style: GoogleFonts.lato(
+                                    color: AppColor.greyColor,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                Text(
+                                  'Ola.angel',
+                                  style: GoogleFonts.lato(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Gap(8.0),
+                            CirclePictureCreatorCard(
+                              profile: AppAsset.sampleProfilePicture,
+                              backgroundColor: AppColor.blueOceanColor,
+                            ),
+                            const Gap(8.0),
+                            Text(
+                              AppMessage.seeMoreCircuit,
+                              style: GoogleFonts.lato(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 17.0,
                               ),
-                            )
-                            .toList()
-                      ],
-                    ),
+                            ),
+                            const Gap(8.0),
+                          ],
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          left: horizontalSpaceBtwScreenAndComponent,
+                        ),
+                        child: MoreCircuitByAuthor(),
+                      ),
+                      const Gap(20.0),
+                    ],
                   );
                 },
                 childCount: 1,
