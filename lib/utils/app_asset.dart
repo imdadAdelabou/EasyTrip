@@ -9,4 +9,8 @@ class AppAsset {
   static String iconNotif = "assets/icons/iconNotif.svg";
   static String coverSampleProfile = "assets/gifs/coverSamplePicture.webp";
   static String sampleProfilePicture = "assets/gifs/samplePictureProfile.jpeg";
+  static String activeHomeIcon = "assets/icons/homeActiveIcon.svg";
+  static String homeDisableIcon = "assets/icons/homeDisableIcon.svg";
+  static String profileActiveIcon = "assets/icons/profileActiveIcon.svg";
+  static String profileInactiveIcon = "assets/icons/profileInactiveIcon.svg";
 }

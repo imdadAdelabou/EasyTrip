@@ -1,5 +1,6 @@
 import "package:easy_trip/components/circuit_card.dart";
 import "package:easy_trip/components/creator_card.dart";
+import "package:easy_trip/components/custom_bottom_bar.dart";
 import "package:easy_trip/components/head_title_section.dart";
 import "package:easy_trip/components/icon_notification.dart";
 import "package:easy_trip/models/circuit/circuit.dart";
@@ -136,6 +137,7 @@ class HomeTraveller extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }

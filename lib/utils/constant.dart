@@ -1,4 +1,5 @@
 //Onboarding sample content
+import 'package:easy_trip/models/bottomBar/bottom_bar_item.dart';
 import 'package:easy_trip/models/onboarding/onboarding.model.dart';
 import 'package:easy_trip/models/user/role/user_role_choice.dart';
 import 'package:easy_trip/utils/app_asset.dart';
@@ -50,6 +51,19 @@ List<Onboarding> onBoardingFr = [
     description:
         "Partagez vos connaissances locales, découvertes cachées et conseils pratiques avec d'autres voyageurs en créant des itinéraires authentiques",
     urlImg: AppAsset.travelOnboardingIll3,
+  ),
+];
+
+List<BottomBarItem> itemsAppBar = [
+  BottomBarItem(
+    activeIcon: AppAsset.activeHomeIcon,
+    label: "Accueil",
+    inactiveIcon: AppAsset.homeDisableIcon,
+  ),
+  BottomBarItem(
+    activeIcon: AppAsset.profileActiveIcon,
+    label: "Profil",
+    inactiveIcon: AppAsset.profileInactiveIcon,
   ),
 ];
 const horizontalSpaceBtwScreenAndComponent = 20.0;
