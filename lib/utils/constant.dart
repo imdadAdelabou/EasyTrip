@@ -6,12 +6,16 @@ import 'package:easy_trip/utils/app_asset.dart';
 import 'package:easy_trip/utils/app_message.dart';
 import 'package:easy_trip/utils/styles.dart';
 import 'package:easy_trip/views/auth/register/traveler/register_traveler.dart';
+import 'package:easy_trip/views/home/traveller/index_home.dart';
+import 'package:easy_trip/views/home/traveller/setting_traveller.dart';
 
 const circleRadius = 70.0;
 
 enum TypeInput { text, password }
 
 enum TypeUser { traveller, creator }
+
+const screensTraveller = [IndexHome(), SettingTraveller()];
 
 List<UserRoleChoice> userChoices = [
   UserRoleChoice(
