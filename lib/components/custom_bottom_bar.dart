@@ -2,6 +2,7 @@ import "package:easy_trip/utils/constant.dart";
 import "package:flutter/material.dart";
 import "package:flutter_svg/svg.dart";
 import "package:google_fonts/google_fonts.dart";
+import 'dart:io';
 
 class CustomBottomBar extends StatefulWidget {
   final Function(int) getCurrentIndex;
@@ -16,18 +17,20 @@ class CustomBottomBar extends StatefulWidget {
 
 class _CustomBottomBarState extends State<CustomBottomBar> {
   int _currentIndex = 0;
+  String platform = Platform.operatingSystem;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 60.0,
       child: BottomNavigationBar(
+        
         onTap: (int index) {
           widget.getCurrentIndex(index);
           setState(() {
             _currentIndex = index;
           });
-        } ,
+        },
         currentIndex: _currentIndex,
         selectedLabelStyle: GoogleFonts.lato(),
         unselectedLabelStyle: GoogleFonts.lato(),

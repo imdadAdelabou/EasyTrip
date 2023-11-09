@@ -40,4 +40,7 @@ class AppMessage {
   static String byLabel = "Par ";
   static String seeMoreCircuit =
       "Découvrez d'autres circuits de ce \ncréateur :";
+  static String badgeLabel = "Badges";
+  static String sharingLabel = "Partager";
+  static String logOut = "Se déconnecter";
 }

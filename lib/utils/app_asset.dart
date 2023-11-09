@@ -13,4 +13,7 @@ class AppAsset {
   static String homeDisableIcon = "assets/icons/homeDisableIcon.svg";
   static String profileActiveIcon = "assets/icons/profileActiveIcon.svg";
   static String profileInactiveIcon = "assets/icons/profileInactiveIcon.svg";
+  static String shareIcon = "assets/icons/shareIcon.svg";
+  static String logoutIcon = "assets/icons/logoutIcon.svg";
+  static String easyTripBadgeBettaTester = "assets/logos/badgeEasyTrip.svg";
 }

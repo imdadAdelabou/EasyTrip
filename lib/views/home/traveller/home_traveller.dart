@@ -1,3 +1,5 @@
+import "dart:io";
+
 import "package:easy_trip/components/circuit_card.dart";
 import "package:easy_trip/components/creator_card.dart";
 import "package:easy_trip/components/custom_bottom_bar.dart";
@@ -24,6 +26,7 @@ class HomeTraveller extends StatefulWidget {
 
 class _HomeTravellerState extends State<HomeTraveller> {
   int _currentIndex = 0;
+  String platform = Platform.operatingSystem;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +36,30 @@ class _HomeTravellerState extends State<HomeTraveller> {
           child: screensTraveller[_currentIndex],
         ),
       ),
-      bottomNavigationBar: CustomBottomBar(
-        getCurrentIndex: (index) => setState(() {
-          _currentIndex = index;
-        }),
-      ),
+      floatingActionButton: platform == 'ios'
+          ? Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(90.0),
+                child: CustomBottomBar(
+                  getCurrentIndex: (index) => setState(() {
+                    _currentIndex = index;
+                  }),
+                ),
+              ),
+            )
+          : null,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      bottomNavigationBar: platform == 'android'
+          ? CustomBottomBar(
+              getCurrentIndex: (index) => setState(() {
+                _currentIndex = index;
+              }),
+            )
+          : null,
+      backgroundColor: AppColor.greySecondVariant,
     );
   }
 }
