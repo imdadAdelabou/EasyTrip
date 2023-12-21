@@ -43,4 +43,16 @@ class AppMessage {
   static String badgeLabel = "Badges";
   static String sharingLabel = "Partager";
   static String logOut = "Se déconnecter";
+  static String totalViewLabel = "Nombre total \nde vue";
+  static String totalGenratedCircuit = "Nombre total\n de circuits généré";
+  static String newCircuit = "Nouveau circuit";
+  static String nameOfCircuit = "Titre";
+  static String descriptionCircuit = "Description";
+  static String hintTitleCircuit = "Découvrez la plus belle ville ";
+  static String addAncircuitArret = "Ajouter un arrêt";
+  static String localizationLabel = "Localisation";
+  static String addLabel = "Ajouter";
+  static String attractiveImgLabel = "Ajouter une image du lieux";
+  static String sinceGalleryLabel = "Depuis la gallery";
+  static String sinceCamera = "Depuis la caméra";
 }

@@ -11,6 +11,9 @@ class CustomTextField extends StatefulWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final TypeInput typeInput;
+  final int? minLines;
+  final int? maxLines;
+  final Widget? prefixIcon;
 
   const CustomTextField({
     super.key,
@@ -20,6 +23,9 @@ class CustomTextField extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.typeInput = TypeInput.text,
+    this.minLines,
+    this.maxLines,
+    this.prefixIcon,
   });
 
   @override
@@ -38,7 +44,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      minLines: widget.minLines,
+      maxLines: widget.maxLines,
       decoration: InputDecoration(
+          prefixIcon: widget.prefixIcon,
           hintText: widget.hintText,
           hintStyle: GoogleFonts.lato(
             fontSize: 13.0,

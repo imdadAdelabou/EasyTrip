@@ -16,11 +16,9 @@ class CircuitCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double maxWidth = MediaQuery.of(context).size.width;
-    double maxHeight = MediaQuery.of(context).size.height;
 
     return SizedBox(
       width: maxWidth * .7,
-      height: maxHeight * .4,
       child: GestureDetector(
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(

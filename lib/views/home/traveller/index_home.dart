@@ -1,5 +1,6 @@
 import "package:easy_trip/components/circuit_card.dart";
 import "package:easy_trip/components/creator_card.dart";
+import "package:easy_trip/components/custom_header.dart";
 import "package:easy_trip/components/head_title_section.dart";
 import "package:easy_trip/components/icon_notification.dart";
 import "package:easy_trip/models/circuit/circuit.dart";
@@ -23,44 +24,7 @@ class IndexHome extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Gap(20.0),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: horizontalSpaceBtwScreenAndComponent,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${AppMessage.helloLabel} 👋,',
-                    style: GoogleFonts.lato(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'John DOE',
-                    style: GoogleFonts.lato(
-                      fontSize: 26.0,
-                      fontWeight: FontWeight.bold,
-                      color: AppColor.greyColor,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(
-                right: horizontalSpaceBtwScreenAndComponent,
-              ),
-              child: IconNotification(),
-            ),
-          ],
-        ),
+        const CustomHeader(username: 'John DOE'),
         const Gap(40.0),
         HeadTitleSection(
           label: AppMessage.ourCircuits,
@@ -128,7 +92,7 @@ class IndexHome extends StatelessWidget {
             ),
           ),
         ),
-        const Gap(20.0),
+        const Gap(98.0),
       ],
     );
   }

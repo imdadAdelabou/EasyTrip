@@ -161,23 +161,17 @@ class _DetailCircuitState extends State<DetailCircuit> {
                               profile: AppAsset.sampleProfilePicture,
                               backgroundColor: AppColor.blueOceanColor,
                             ),
-                            const Gap(8.0),
-                            Text(
-                              AppMessage.seeMoreCircuit,
-                              style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17.0,
-                              ),
-                            ),
-                            const Gap(8.0),
+                            // const Gap(8.0),
+                            // Text(
+                            //   AppMessage.seeMoreCircuit,
+                            //   style: GoogleFonts.lato(
+                            //     fontWeight: FontWeight.w600,
+                            //     fontSize: 17.0,
+                            //   ),
+                            // ),
+                            // const Gap(8.0),
                           ],
                         ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          left: horizontalSpaceBtwScreenAndComponent,
-                        ),
-                        child: MoreCircuitByAuthor(),
                       ),
                       const Gap(20.0),
                     ],

@@ -6,11 +6,15 @@ class CustomBtn extends StatelessWidget {
   final Function()? action;
   final String content;
   final bool isLoading;
+  final Color? bgColor;
+  final Icon? prefixIcon;
   const CustomBtn({
     super.key,
     required this.content,
     this.action,
     this.isLoading = false,
+    this.bgColor,
+    this.prefixIcon,
   });
 
   @override
@@ -23,15 +27,25 @@ class CustomBtn extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
-          backgroundColor: AppColor.orangeColor,
+          backgroundColor: bgColor ?? AppColor.orangeColor,
         ),
         onPressed: action,
-        child: Text(
-          content,
-          style: GoogleFonts.lato(
-            fontWeight: FontWeight.w600,
-            color: AppColor.whiteColor,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (prefixIcon != null)
+              Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: prefixIcon!,
+              ),
+            Text(
+              content,
+              style: GoogleFonts.lato(
+                fontWeight: FontWeight.w600,
+                color: AppColor.whiteColor,
+              ),
+            ),
+          ],
         ),
       ),
     );

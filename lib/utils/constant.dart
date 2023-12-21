@@ -6,6 +6,7 @@ import 'package:easy_trip/utils/app_asset.dart';
 import 'package:easy_trip/utils/app_message.dart';
 import 'package:easy_trip/utils/styles.dart';
 import 'package:easy_trip/views/auth/register/traveler/register_traveler.dart';
+import 'package:easy_trip/views/home/creator/home_creator.dart';
 import 'package:easy_trip/views/home/traveller/index_home.dart';
 import 'package:easy_trip/views/home/traveller/setting_traveller.dart';
 
@@ -34,7 +35,7 @@ List<UserRoleChoice> userChoices = [
     urlImage: AppAsset.creatorChoiceIll,
     color: AppColor.orangeVariant,
     userType: TypeUser.creator,
-    nextPath: "",
+    nextPath: HomeCreator.routeName,
   ),
 ];
 List<Onboarding> onBoardingFr = [

@@ -16,4 +16,5 @@ class AppAsset {
   static String shareIcon = "assets/icons/shareIcon.svg";
   static String logoutIcon = "assets/icons/logoutIcon.svg";
   static String easyTripBadgeBettaTester = "assets/logos/badgeEasyTrip.svg";
+  static String noDataIll = "assets/gifs/noDataIll.svg";
 }

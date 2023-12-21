@@ -10,6 +10,9 @@ class InputWithLabel extends StatelessWidget {
   final TextInputType keyBoardType;
   final TypeInput typeInput;
   final bool obsureText;
+  final int? minLines;
+  final int? maxLines;
+  final Widget? prefixIcon;
   const InputWithLabel({
     super.key,
     required this.label,
@@ -17,6 +20,9 @@ class InputWithLabel extends StatelessWidget {
     required this.keyBoardType,
     this.typeInput = TypeInput.text,
     this.obsureText = !false,
+    this.minLines,
+    this.maxLines,
+    this.prefixIcon,
   });
 
   @override
@@ -36,6 +42,9 @@ class InputWithLabel extends StatelessWidget {
           keyboardType: keyBoardType,
           typeInput: typeInput,
           obscureText: obsureText,
+          minLines: minLines,
+          maxLines: maxLines,
+          prefixIcon: prefixIcon,
         ),
       ],
     );

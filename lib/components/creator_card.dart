@@ -70,7 +70,7 @@ class CreatorCard extends StatelessWidget {
                     ),
                     maxLines: 2,
                   ),
-                  const Gap(2.0),
+                  const Gap(8.0),
                   TextButton(
                     onPressed: () {},
                     style: ButtonStyle(
