@@ -1,5 +1,6 @@
 import "package:easy_trip/utils/styles.dart";
 import "package:flutter/material.dart";
+import "package:flutter_animate/flutter_animate.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class TextLogo extends StatelessWidget {
@@ -33,6 +34,6 @@ class TextLogo extends StatelessWidget {
           ),
         ),
       ],
-    );
+    ).animate().fadeIn(duration: 900.ms);
   }
 }

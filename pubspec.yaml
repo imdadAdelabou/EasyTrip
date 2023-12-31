@@ -42,6 +42,7 @@ dependencies:
   animations:
   pin_code_fields:
   image_picker:
+  flutter_animate:
 
 dev_dependencies:
   flutter_test:

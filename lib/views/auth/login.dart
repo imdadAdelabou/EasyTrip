@@ -8,6 +8,7 @@ import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/auth/register/select_role.dart";
 import "package:flutter/material.dart";
+import "package:flutter_animate/flutter_animate.dart";
 import "package:gap/gap.dart";
 
 class LoginView extends StatelessWidget {
@@ -35,40 +36,44 @@ class LoginView extends StatelessWidget {
                 secondColor: AppColor.blueOceanColor,
               ),
               const Gap(50.0),
-              InputWithLabel(
-                label: AppMessage.phoneNumber,
-                hintText: '3377098300',
-                keyBoardType: TextInputType.number,
-              ),
-              const Gap(20.0),
-              InputWithLabel(
-                label: AppMessage.password,
-                hintText: 'example962A666',
-                typeInput: TypeInput.password,
-                keyBoardType: TextInputType.text,
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: CustomTextbtn(
-                  label: AppMessage.passwordForget,
-                  textDecoration: TextDecoration.underline,
-                  action: () {},
-                ),
-              ),
-              const Gap(30),
-              CustomBtn(
-                content: AppMessage.iamLoginLabel,
-                action: () {},
-              ),
-              const Gap(10.0),
-              Center(
-                child: CustomTextbtn(
-                  label: AppMessage.iamNewLabel,
-                  action: () => Navigator.of(context).pushNamed(
-                    SelectRole.routeName,
+              Column(
+                children: [
+                  InputWithLabel(
+                    label: AppMessage.phoneNumber,
+                    hintText: '3377098300',
+                    keyBoardType: TextInputType.number,
                   ),
-                  textDecoration: TextDecoration.underline,
-                ),
+                  const Gap(20.0),
+                  InputWithLabel(
+                    label: AppMessage.password,
+                    hintText: 'example962A666',
+                    typeInput: TypeInput.password,
+                    keyBoardType: TextInputType.text,
+                  ).animate(),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: CustomTextbtn(
+                      label: AppMessage.passwordForget,
+                      textDecoration: TextDecoration.underline,
+                      action: () {},
+                    ),
+                  ),
+                  const Gap(30),
+                  CustomBtn(
+                    content: AppMessage.iamLoginLabel,
+                    action: () {},
+                  ),
+                  const Gap(10.0),
+                  Center(
+                    child: CustomTextbtn(
+                      label: AppMessage.iamNewLabel,
+                      action: () => Navigator.of(context).pushNamed(
+                        SelectRole.routeName,
+                      ),
+                      textDecoration: TextDecoration.underline,
+                    ),
+                  ),
+                ].animate(interval: 100.ms).slideX(duration: 900.ms).fadeIn(),
               ),
             ],
           ),
