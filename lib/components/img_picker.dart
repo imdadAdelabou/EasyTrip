@@ -1,8 +1,10 @@
 import "dart:io";
 
 import "package:easy_trip/services/image_picker_service.dart";
+import "package:easy_trip/utils/app_asset.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:flutter/material.dart";
+import "package:flutter_svg/svg.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:image_picker/image_picker.dart";
@@ -47,7 +49,26 @@ class _ImgPickerState extends State<ImgPicker> {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: img != null
-            ? Image.file(File(img!.path))
+            ? Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: Image.file(
+                      File(img!.path),
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Positioned(
+                    top: 10,
+                    right: 10,
+                    child: SvgPicture.asset(
+                      AppAsset.editIcon,
+                    ),
+                  ),
+                ],
+              )
             : const Icon(
                 FontAwesomeIcons.plus,
                 color: Color(0xffABABAB),

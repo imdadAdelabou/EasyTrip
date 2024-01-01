@@ -48,10 +48,8 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<true />
+	<string>Need to upload image</string>
 	<key>NSCameraUsageDescription</key>
-	<true />
-	<key>NSCameraUsageDescription</key>
-	<true />
+	<string>Need to upload image</string>
 </dict>
 </plist>
