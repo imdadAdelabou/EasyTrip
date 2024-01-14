@@ -55,4 +55,5 @@ class AppMessage {
   static String attractiveImgLabel = "Ajouter une image du lieux";
   static String sinceGalleryLabel = "Depuis la gallery";
   static String sinceCamera = "Depuis la caméra";
+  static String requiredField = "Ce champs est requis";
 }

@@ -5,6 +5,8 @@ import "package:gap/gap.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class InputWithLabel extends StatelessWidget {
+  final bool isRequired;
+  final TextEditingController? controller;
   final String label;
   final String hintText;
   final TextInputType keyBoardType;
@@ -23,6 +25,8 @@ class InputWithLabel extends StatelessWidget {
     this.minLines,
     this.maxLines,
     this.prefixIcon,
+    this.controller,
+    this.isRequired = false,
   });
 
   @override
@@ -38,6 +42,7 @@ class InputWithLabel extends StatelessWidget {
         ),
         const Gap(4.0),
         CustomTextField(
+          controller: controller,
           hintText: hintText,
           keyboardType: keyBoardType,
           typeInput: typeInput,
@@ -45,6 +50,7 @@ class InputWithLabel extends StatelessWidget {
           minLines: minLines,
           maxLines: maxLines,
           prefixIcon: prefixIcon,
+          isRequired: isRequired,
         ),
       ],
     );

@@ -32,6 +32,7 @@ class MoreCircuitByAuthor extends StatelessWidget {
                 position: "Porto Novo",
                 description:
                     "La ville de Porto Novo, surnommée la 'cité rouge', peut offrir aux touristes une belle diversité d'activités lors de leur voyage au Bénin",
+                urlImage: "",
               ),
               PathCircuit(
                 id: "1",
@@ -39,6 +40,7 @@ class MoreCircuitByAuthor extends StatelessWidget {
                 description:
                     "Cette ville est située à 10 kilomètres de Porto Novo, installez-vous derrière un zemidjan (moto taxi) et vous y serez en quelques minutes. Ce village est célèbre pour son marché artisanal, coloré et dynamique",
                 position: "Porto-Novo, Bénin",
+                urlImage: "",
               ),
               PathCircuit(
                 id: "2",
@@ -46,6 +48,7 @@ class MoreCircuitByAuthor extends StatelessWidget {
                 description:
                     "Les Aguégué sont les villages les plus connus du lac. La balade en pirogue (à moteur ou au bambou) est agréable et la vie sur l'eau des Béninois offre un beau tableau",
                 position: "Nokoué",
+                urlImage: "",
               ),
             ],
             description: AppMessage.sampleDescription,

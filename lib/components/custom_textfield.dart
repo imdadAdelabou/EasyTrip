@@ -1,3 +1,4 @@
+import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:flutter/material.dart";
@@ -5,6 +6,7 @@ import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class CustomTextField extends StatefulWidget {
+  final TextEditingController? controller;
   final bool filled;
   final Color fillColor;
   final String? hintText;
@@ -14,6 +16,7 @@ class CustomTextField extends StatefulWidget {
   final int? minLines;
   final int? maxLines;
   final Widget? prefixIcon;
+  final bool isRequired;
 
   const CustomTextField({
     super.key,
@@ -26,6 +29,8 @@ class CustomTextField extends StatefulWidget {
     this.minLines,
     this.maxLines,
     this.prefixIcon,
+    this.controller,
+    this.isRequired = false,
   });
 
   @override
@@ -44,6 +49,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       minLines: widget.minLines,
       maxLines: widget.maxLines,
       decoration: InputDecoration(
@@ -79,6 +85,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
       obscureText: !isOpen,
       keyboardType: widget.keyboardType,
       obscuringCharacter: '*',
+      validator: (String? value) {
+        if (!widget.isRequired) return null;
+        if (value != null && value.isNotEmpty) return null;
+
+        return AppMessage.requiredField;
+      },
     );
   }
 }

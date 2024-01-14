@@ -1,15 +1,17 @@
-import 'package:easy_trip/components/custom_textfield.dart';
 import 'package:easy_trip/components/input_with_label.dart';
+import 'package:easy_trip/providers/app_state.dart';
 import 'package:easy_trip/utils/app_asset.dart';
 import 'package:easy_trip/utils/app_message.dart';
 import 'package:easy_trip/utils/constant.dart';
 import 'package:easy_trip/utils/styles.dart';
 import 'package:easy_trip/views/home/creator/add_stop_cmp.dart';
 import 'package:easy_trip/views/home/creator/empty_circuit.dart';
+import 'package:easy_trip/views/home/creator/widgets/preview_path.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class CreateCircuit extends StatelessWidget {
   static String routeName = "/create-circuit";
@@ -56,8 +58,45 @@ class CreateCircuit extends StatelessWidget {
               maxLines: null,
             ),
             const Gap(30.0),
-            EmptyCircuit(
-              label: AppAsset.noDataIll,
+            Consumer<AppState>(
+              builder: (context, appState, child) {
+                return appState.paths.isEmpty
+                    ? EmptyCircuit(
+                        label: AppAsset.noDataIll,
+                        onPressed: () {
+                          showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) => const AddStopDialog(),
+                          );
+                        },
+                      )
+                    : ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        primary: false,
+                        itemCount: appState.paths.length,
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.only(bottom: 20.0),
+                          child: PreviewPath(
+                            path: appState.paths[index],
+                          ),
+                        ),
+                      );
+              },
+            ),
+          ],
+        ),
+      ),
+      backgroundColor: AppColor.greySecondVariant,
+      floatingActionButton: context.watch<AppState>().paths.isNotEmpty
+          ? FloatingActionButton(
+              backgroundColor: AppColor.orangeVariant,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                  30.0,
+                ),
+              ),
               onPressed: () {
                 showModalBottomSheet(
                   isScrollControlled: true,
@@ -65,32 +104,12 @@ class CreateCircuit extends StatelessWidget {
                   builder: (context) => const AddStopDialog(),
                 );
               },
-            ),
-            // InkWell(
-            //   onTap: () {},
-            //   child: Padding(
-            //     padding: const EdgeInsets.all(4.0),
-            //     child: Row(
-            //       children: [
-            //         const Icon(FontAwesomeIcons.plus),
-            //         const Gap(14.0),
-            //         Text(
-            //           AppMessage.addAncircuitArret,
-            //           style: GoogleFonts.lato(
-            //             fontWeight: FontWeight.bold,
-            //             fontSize: 18.0,
-            //           ),
-            //         ),
-            //         const Spacer(),
-            //         const Icon(FontAwesomeIcons.chevronDown),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-            // AddStopCmp(),
-          ],
-        ),
-      ),
+              child: Icon(
+                FontAwesomeIcons.plus,
+                color: AppColor.whiteColor,
+              ),
+            )
+          : null,
     );
   }
 }

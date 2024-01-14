@@ -10,8 +10,11 @@ import "package:google_fonts/google_fonts.dart";
 import "package:image_picker/image_picker.dart";
 
 class ImgPicker extends StatefulWidget {
+  final Function(XFile?) getFile;
+
   const ImgPicker({
     super.key,
+    required this.getFile,
   });
 
   @override
@@ -30,6 +33,7 @@ class _ImgPickerState extends State<ImgPicker> {
             Navigator.of(context).pop();
             setState(() {
               img = file;
+              widget.getFile(img);
             });
           },
         ),

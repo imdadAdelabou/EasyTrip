@@ -6,7 +6,6 @@ import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/home/creator/create_circuit.dart";
 import "package:easy_trip/views/home/creator/stats_card.dart";
 import "package:flutter/material.dart";
-import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:gap/gap.dart";
 
 class HomeCreator extends StatelessWidget {
