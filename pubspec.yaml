@@ -45,6 +45,7 @@ dependencies:
   flutter_animate:
   provider:
   json_annotation: ^4.8.1
+  go_router: ^14.1.2
 
 dev_dependencies:
   flutter_test:

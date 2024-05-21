@@ -8,6 +8,7 @@ import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/home/traveller/home_traveller.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class UploadPictureProfile extends StatelessWidget {
@@ -68,9 +69,7 @@ class UploadPictureProfile extends StatelessWidget {
               child: CustomBtn(
                 content: AppMessage.finishLabel,
                 action: () {
-                  Navigator.of(context).pushNamed(
-                    HomeTraveller.routeName,
-                  );
+                  context.go(HomeTraveller.routeName);
                 },
               ),
             ),
