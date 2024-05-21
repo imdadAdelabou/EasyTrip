@@ -7,6 +7,7 @@ import "package:easy_trip/views/home/creator/create_circuit.dart";
 import "package:easy_trip/views/home/creator/stats_card.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
 
 class HomeCreator extends StatelessWidget {
   static String routeName = "/home-creator";
@@ -55,7 +56,7 @@ class HomeCreator extends StatelessWidget {
       backgroundColor: AppColor.greySecondVariant,
       floatingActionButton: CustomFloatingActionBtn(
         onPressed: () {
-          Navigator.of(context).pushNamed(CreateCircuit.routeName);
+          context.go(CreateCircuit.routeName);
         },
       ),
     );

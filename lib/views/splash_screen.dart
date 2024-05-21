@@ -3,6 +3,7 @@ import "package:easy_trip/utils/app_asset.dart";
 import "package:easy_trip/utils/styles.dart";
 import 'package:easy_trip/views/onBoarding/on_boarding.view.dart';
 import "package:flutter/material.dart";
+import "package:go_router/go_router.dart";
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splash-screen";
@@ -18,9 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(
       const Duration(seconds: 2),
-      () => Navigator.of(context).pushReplacementNamed(
-        OnBoardingView.routeName,
-      ),
+      () => context.go(OnBoardingView.routeName),
     );
   }
 

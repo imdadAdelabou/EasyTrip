@@ -10,6 +10,7 @@ import "package:easy_trip/views/auth/register/select_role.dart";
 import "package:flutter/material.dart";
 import "package:flutter_animate/flutter_animate.dart";
 import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
 
 class LoginView extends StatelessWidget {
   static String routeName = "/login";
@@ -67,9 +68,7 @@ class LoginView extends StatelessWidget {
                   Center(
                     child: CustomTextbtn(
                       label: AppMessage.iamNewLabel,
-                      action: () => Navigator.of(context).pushNamed(
-                        SelectRole.routeName,
-                      ),
+                      action: () => context.go(SelectRole.routeName),
                       textDecoration: TextDecoration.underline,
                     ),
                   ),

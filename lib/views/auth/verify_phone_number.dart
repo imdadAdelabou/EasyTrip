@@ -8,6 +8,7 @@ import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/auth/register/upload_picture_profile.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class VerifyPhoneNumber extends StatefulWidget {
@@ -72,9 +73,7 @@ class _VerifyPhoneNumberState extends State<VerifyPhoneNumber> {
               CustomBtn(
                 content: AppMessage.verifyLabel,
                 action: () {
-                  Navigator.of(context).pushNamed(
-                    UploadPictureProfile.routeName,
-                  );
+                  context.go(UploadPictureProfile.routeName);
                 },
               ),
             ],

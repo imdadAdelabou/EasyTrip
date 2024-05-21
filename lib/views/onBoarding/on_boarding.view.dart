@@ -8,6 +8,7 @@ import "package:easy_trip/views/onBoarding/on_boarding_step_tracker.dart";
 import "package:flutter/material.dart";
 import "package:flutter_svg/svg.dart";
 import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class OnBoardingView extends StatefulWidget {
@@ -117,9 +118,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     : AppMessage.beginLabel,
                 action: () {
                   if (currentIndex == 2) {
-                    Navigator.of(context).pushNamed(
-                      LoginView.routeName,
-                    );
+                    context.go(LoginView.routeName);
                     return;
                   }
                   controller.nextPage(
