@@ -5,7 +5,6 @@ import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:easy_trip/views/home/circuit/cover_img_indicator.dart";
-import "package:easy_trip/views/home/circuit/more_circuit_by_author.dart";
 import "package:easy_trip/views/home/circuit/piece_detail_circuit.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";

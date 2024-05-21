@@ -2,7 +2,6 @@ import "package:easy_trip/components/circuit_card.dart";
 import "package:easy_trip/components/creator_card.dart";
 import "package:easy_trip/components/custom_header.dart";
 import "package:easy_trip/components/head_title_section.dart";
-import "package:easy_trip/components/icon_notification.dart";
 import "package:easy_trip/models/circuit/circuit.dart";
 import "package:easy_trip/models/creator/creator.dart";
 import "package:easy_trip/models/path/path.dart";
@@ -10,10 +9,10 @@ import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
-import "package:google_fonts/google_fonts.dart";
+
 
 import "../../../utils/app_asset.dart";
-import "../../../utils/styles.dart";
+
 
 class IndexHome extends StatelessWidget {
   const IndexHome({super.key});
