@@ -56,4 +56,6 @@ class AppMessage {
   static String sinceGalleryLabel = "Depuis la gallery";
   static String sinceCamera = "Depuis la caméra";
   static String requiredField = "Ce champs est requis";
+  static String note = "Note";
+  static String socialMedia = "Réseaux sociaux";
 }
