@@ -17,17 +17,17 @@ class CustomTextbtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        shape: MaterialStatePropertyAll(
+        shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4.0),
           ),
         ),
-        textStyle: MaterialStatePropertyAll(
+        textStyle: WidgetStatePropertyAll(
           GoogleFonts.lato(
             decoration: textDecoration,
           ),
         ),
-        padding: const MaterialStatePropertyAll(
+        padding: const WidgetStatePropertyAll(
           EdgeInsets.all(2.0),
         ),
       ),

@@ -33,7 +33,7 @@ class SettingTraveller extends StatelessWidget {
                 ),
               ),
               const Gap(30.0),
-              CirclePictureCreatorCard(
+              CirclePictureCard(
                 profile: AppAsset.coverSampleProfile,
                 firstRadius: 70.0,
                 secondRadius: 64.0,

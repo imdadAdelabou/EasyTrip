@@ -156,7 +156,7 @@ class _DetailCircuitState extends State<DetailCircuit> {
                               ],
                             ),
                             const Gap(8.0),
-                            CirclePictureCreatorCard(
+                            CirclePictureCard(
                               profile: AppAsset.sampleProfilePicture,
                               backgroundColor: AppColor.blueOceanColor,
                             ),

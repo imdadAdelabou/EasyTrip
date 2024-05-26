@@ -1,6 +1,7 @@
 import "dart:io";
 
 import "package:easy_trip/components/custom_bottom_bar.dart";
+import "package:easy_trip/components/custom_bottom_bar_ios.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
 import "package:flutter/material.dart";
@@ -26,18 +27,11 @@ class _HomeTravellerState extends State<HomeTraveller> {
         ),
       ),
       floatingActionButton: platform == 'ios'
-          ? Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10.0,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(90.0),
-                child: CustomBottomBar(
-                  getCurrentIndex: (index) => setState(() {
-                    _currentIndex = index;
-                  }),
-                ),
-              ),
+          ? CustomBottomBarIos(
+              getCurrentIndex: (index) => setState(() {
+                _currentIndex = index;
+              }),
+              items: itemsAppBar,
             )
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -46,6 +40,7 @@ class _HomeTravellerState extends State<HomeTraveller> {
               getCurrentIndex: (index) => setState(() {
                 _currentIndex = index;
               }),
+              items: itemsAppBar,
             )
           : null,
       backgroundColor: AppColor.greySecondVariant,
