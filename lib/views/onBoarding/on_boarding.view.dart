@@ -1,5 +1,6 @@
 import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/components/skip_label.dart";
+import "package:easy_trip/routes.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
@@ -42,7 +43,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               alignment: Alignment.bottomRight,
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).pushNamed(LoginView.routeName);
+                  router.go(LoginView.routeName);
                 },
                 child: const SkipLabel(),
               ),

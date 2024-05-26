@@ -1,5 +1,6 @@
 import "package:easy_trip/components/back_icon.dart";
 import "package:easy_trip/components/custom_btn.dart";
+import "package:easy_trip/routes.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/views/auth/register/role_card.dart";
@@ -70,7 +71,7 @@ class _SelectRoleState extends State<SelectRole> {
               CustomBtn(
                 content: AppMessage.nextLabel,
                 action: currentPath != null && currentPath!.isNotEmpty
-                    ? () => Navigator.of(context).pushNamed(
+                    ? () => router.go(
                           currentPath!,
                         )
                     : null,

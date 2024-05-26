@@ -42,7 +42,7 @@ class CreatorCard extends StatelessWidget {
                 Positioned(
                   bottom: -20,
                   left: 10,
-                  child: CirclePictureCreatorCard(
+                  child: CirclePictureCard(
                     profile: creator.pictureProfile,
                   ),
                 ),
@@ -74,7 +74,7 @@ class CreatorCard extends StatelessWidget {
                   TextButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
+                      backgroundColor: WidgetStateProperty.all<Color>(
                         AppColor.orangeColor,
                       ),
                     ),

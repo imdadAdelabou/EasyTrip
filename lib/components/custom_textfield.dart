@@ -17,21 +17,24 @@ class CustomTextField extends StatefulWidget {
   final int? maxLines;
   final Widget? prefixIcon;
   final bool isRequired;
+  final bool readOnly;
+  final TextStyle? style;
 
-  const CustomTextField({
-    super.key,
-    this.filled = true,
-    this.fillColor = Colors.grey,
-    this.hintText,
-    this.keyboardType = TextInputType.text,
-    this.obscureText = false,
-    this.typeInput = TypeInput.text,
-    this.minLines,
-    this.maxLines,
-    this.prefixIcon,
-    this.controller,
-    this.isRequired = false,
-  });
+  const CustomTextField(
+      {super.key,
+      this.filled = true,
+      this.fillColor = Colors.grey,
+      this.hintText,
+      this.keyboardType = TextInputType.text,
+      this.obscureText = false,
+      this.typeInput = TypeInput.text,
+      this.minLines,
+      this.maxLines,
+      this.prefixIcon,
+      this.controller,
+      this.isRequired = false,
+      this.readOnly = false,
+      this.style});
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -52,6 +55,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       controller: widget.controller,
       minLines: widget.minLines,
       maxLines: widget.maxLines,
+      readOnly: widget.readOnly,
       decoration: InputDecoration(
           prefixIcon: widget.prefixIcon,
           hintText: widget.hintText,
@@ -65,13 +69,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           isDense: true,
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              width: 2.0,
-              color: AppColor.blueOceanColor,
-            ),
-            borderRadius: BorderRadius.circular(8.0),
-          ),
+          focusedBorder: !widget.readOnly
+              ? OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2.0,
+                    color: AppColor.blueOceanColor,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                )
+              : null,
           suffixIcon: widget.typeInput == TypeInput.password
               ? InkWell(
                   onTap: () => setState(() {
@@ -82,7 +88,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   ),
                 )
               : null),
-      obscureText: !isOpen,
+      style: widget.style,
+      obscureText: isOpen,
       keyboardType: widget.keyboardType,
       obscuringCharacter: '*',
       validator: (String? value) {
