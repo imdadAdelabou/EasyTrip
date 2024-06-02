@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542225221233",
+    "project_id": "easy-trip-d9c07",
+    "storage_bucket": "easy-trip-d9c07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542225221233:android:1489bace5fdda6f7067dd0",
+        "android_client_info": {
+          "package_name": "com.easytrip.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdfQqmQVvdsljHEiq7eGTSzgEo_j0rbMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
