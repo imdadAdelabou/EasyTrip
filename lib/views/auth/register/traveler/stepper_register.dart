@@ -46,7 +46,7 @@ class _StepperRegisterState extends State<StepperRegister> {
               });
               return;
             }
-            context.go(VerifyPhoneNumber.routeName);
+            context.push(VerifyPhoneNumber.routeName);
           },
         ),
       ),

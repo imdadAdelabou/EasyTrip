@@ -48,6 +48,7 @@ class CreateCircuit extends StatelessWidget {
               label: AppMessage.nameOfCircuit,
               hintText: "",
               keyBoardType: TextInputType.text,
+              obsureText: false,
             ),
             const Gap(20.0),
             InputWithLabel(
@@ -55,7 +56,7 @@ class CreateCircuit extends StatelessWidget {
               hintText: "",
               keyBoardType: TextInputType.text,
               minLines: 2,
-              maxLines: null,
+              maxLines: 4,
             ),
             const Gap(30.0),
             Consumer<AppState>(

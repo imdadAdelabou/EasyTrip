@@ -73,7 +73,7 @@ class _VerifyPhoneNumberState extends State<VerifyPhoneNumber> {
               CustomBtn(
                 content: AppMessage.verifyLabel,
                 action: () {
-                  context.go(UploadPictureProfile.routeName);
+                  context.push(UploadPictureProfile.routeName);
                 },
               ),
             ],

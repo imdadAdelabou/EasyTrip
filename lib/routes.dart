@@ -11,8 +11,8 @@ import 'package:easy_trip/views/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
-  // initialLocation: '/',
-  initialLocation: HomeCreator.routeName,
+  initialLocation: '/',
+  // initialLocation: HomeCreator.routeName,
   routes: [
     GoRoute(
       name: 'SplashScreen',

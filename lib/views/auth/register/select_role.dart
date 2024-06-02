@@ -71,7 +71,7 @@ class _SelectRoleState extends State<SelectRole> {
               CustomBtn(
                 content: AppMessage.nextLabel,
                 action: currentPath != null && currentPath!.isNotEmpty
-                    ? () => router.go(
+                    ? () => router.push(
                           currentPath!,
                         )
                     : null,

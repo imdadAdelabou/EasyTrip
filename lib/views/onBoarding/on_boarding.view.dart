@@ -43,7 +43,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               alignment: Alignment.bottomRight,
               child: InkWell(
                 onTap: () {
-                  router.go(LoginView.routeName);
+                  router.push(LoginView.routeName);
                 },
                 child: const SkipLabel(),
               ),
@@ -119,7 +119,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     : AppMessage.beginLabel,
                 action: () {
                   if (currentIndex == 2) {
-                    context.go(LoginView.routeName);
+                    context.push(LoginView.routeName);
                     return;
                   }
                   controller.nextPage(

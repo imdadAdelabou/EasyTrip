@@ -69,7 +69,7 @@ class UploadPictureProfile extends StatelessWidget {
               child: CustomBtn(
                 content: AppMessage.finishLabel,
                 action: () {
-                  context.go(HomeTraveller.routeName);
+                  context.push(HomeTraveller.routeName);
                 },
               ),
             ),

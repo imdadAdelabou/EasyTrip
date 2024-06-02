@@ -20,21 +20,22 @@ class CustomTextField extends StatefulWidget {
   final bool readOnly;
   final TextStyle? style;
 
-  const CustomTextField(
-      {super.key,
-      this.filled = true,
-      this.fillColor = Colors.grey,
-      this.hintText,
-      this.keyboardType = TextInputType.text,
-      this.obscureText = false,
-      this.typeInput = TypeInput.text,
-      this.minLines,
-      this.maxLines,
-      this.prefixIcon,
-      this.controller,
-      this.isRequired = false,
-      this.readOnly = false,
-      this.style});
+  const CustomTextField({
+    super.key,
+    this.filled = true,
+    this.fillColor = Colors.grey,
+    this.hintText,
+    this.keyboardType = TextInputType.text,
+    this.obscureText = false,
+    this.typeInput = TypeInput.text,
+    this.minLines,
+    this.maxLines,
+    this.prefixIcon,
+    this.controller,
+    this.isRequired = false,
+    this.readOnly = false,
+    this.style,
+  });
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -54,7 +55,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return TextFormField(
       controller: widget.controller,
       minLines: widget.minLines,
-      maxLines: widget.maxLines,
+      maxLines: widget.maxLines ?? 1,
       readOnly: widget.readOnly,
       decoration: InputDecoration(
           prefixIcon: widget.prefixIcon,
@@ -84,7 +85,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     isOpen = !isOpen;
                   }),
                   child: Icon(
-                    isOpen ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+                    !isOpen ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
                   ),
                 )
               : null),

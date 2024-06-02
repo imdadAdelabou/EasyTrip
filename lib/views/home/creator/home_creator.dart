@@ -2,14 +2,17 @@ import "dart:io";
 
 import "package:easy_trip/components/custom_bottom_bar.dart";
 import "package:easy_trip/components/custom_bottom_bar_ios.dart";
+import "package:easy_trip/components/custom_btn.dart";
 import "package:easy_trip/components/custom_header.dart";
 import "package:easy_trip/utils/app_message.dart";
 import "package:easy_trip/utils/constant.dart";
 import "package:easy_trip/utils/styles.dart";
+import "package:easy_trip/views/home/creator/create_circuit.dart";
 import "package:easy_trip/views/home/creator/profil_view.dart";
 import "package:easy_trip/views/home/creator/stats_card.dart";
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
+import "package:go_router/go_router.dart";
 
 const _homeSection = [
   _IndexView(),
@@ -97,6 +100,13 @@ class _IndexView extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              const Gap(20.0),
+              CustomBtn(
+                content: 'Créer un circuit',
+                action: () => context.push(
+                  CreateCircuit.routeName,
+                ),
               ),
             ],
           ),

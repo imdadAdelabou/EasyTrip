@@ -68,7 +68,7 @@ class LoginView extends StatelessWidget {
                   Center(
                     child: CustomTextbtn(
                       label: AppMessage.iamNewLabel,
-                      action: () => context.go(SelectRole.routeName),
+                      action: () => context.push(SelectRole.routeName),
                       textDecoration: TextDecoration.underline,
                     ),
                   ),

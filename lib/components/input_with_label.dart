@@ -21,7 +21,7 @@ class InputWithLabel extends StatelessWidget {
     required this.hintText,
     required this.keyBoardType,
     this.typeInput = TypeInput.text,
-    this.obsureText = !false,
+    this.obsureText = false,
     this.minLines,
     this.maxLines,
     this.prefixIcon,
